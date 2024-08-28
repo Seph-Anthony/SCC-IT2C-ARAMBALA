@@ -14,6 +14,11 @@ public class Main {
     public static void main(String[] args) {
         
         Scanner in = new Scanner (System.in);
+        
+        Salary sal = new Salary();
+        sal.inputsalary();
+        
+        
 //      
 //InputGrade grade = new InputGrade();
 //grade.inputgrade();
