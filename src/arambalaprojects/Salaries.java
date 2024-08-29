@@ -14,7 +14,8 @@ public class Salaries {
     String name;
     int id;
     double rate, work, deduc;
-    
+    double ts;
+    double p;
     public void addsalary(int id, String name, double rate, double work, double deduc){
         
         this.id = id;
@@ -30,10 +31,10 @@ public class Salaries {
         
        double gross = this.work*this.rate;
         double net = gross - this.deduc;
-        
+      this.ts = gross;
+        this.p = net;
         System.out.printf("%-10d %-10s %-10.2f %-10.2f %-10.2f %-10.2f %-10.2f \n ", this.id, this.name, this.rate,this.work, gross, this.deduc, net );
-        
-        
+     
         
 
     }
