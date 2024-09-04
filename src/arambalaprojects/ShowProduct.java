@@ -9,7 +9,7 @@ package arambalaprojects;
  *
  * @author SCC-COLLEGE
  */
-public class Product {
+public class ShowProduct {
     
     int id, sold, stock;
     String name;

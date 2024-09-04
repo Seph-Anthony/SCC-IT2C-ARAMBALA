@@ -18,7 +18,7 @@ public class Salary {
          Salaries[] ha = new Salaries[100];
          
          
-         System.out.println("Enter the number of Employees: ");
+         System.out.print("Enter the number of Employees: ");
          int num = in.nextInt();
          double totalrequ=0;
          double totaldeduction=0;

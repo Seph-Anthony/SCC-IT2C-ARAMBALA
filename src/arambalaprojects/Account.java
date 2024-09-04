@@ -16,7 +16,7 @@ public class Account {
         Scanner in = new Scanner (System.in);
         Accounts acc[] = new  Accounts[100];
         
-        System.out.println("Enter the number of Accounts: ");
+        System.out.print("Enter the number of Accounts: ");
         int num = in.nextInt();
         
         for (int i = 0; i<num; i++){

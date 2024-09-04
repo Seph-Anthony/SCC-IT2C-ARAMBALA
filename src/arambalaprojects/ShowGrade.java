@@ -27,8 +27,10 @@ public class ShowGrade {
     }
     
     public void showGrade(){
+          double ave = (this.pr + this.mid + this.prf + this.fi) / 4 ;
+        String remarks = (ave>3.0) ? "Failed": "Passed";
         
-   System.out.printf("%-10d %-10s %-10.2f %-10.2f %-10.2f %-10.2f \n ", this.id, this.name, this.pr,this.mid, this.prf, this.fi );
+  System.out.printf("%-10d %-10s %-10.2f %-10.2f %-10.2f %-10.2f %-10.2f %-10s\n ", this.id, this.name, this.pr,this.mid, this.prf, this.fi, ave, remarks );
         
         
     }

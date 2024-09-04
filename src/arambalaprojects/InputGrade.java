@@ -23,7 +23,7 @@ public class InputGrade {
         ShowGrade[] dy = new ShowGrade[100];
 
         
-        System.out.println("Enter number of Students: \n");
+        System.out.print("Enter number of Students: \n");
         int num = in.nextInt();
         
         for (int i=0; i < num; i++){
@@ -49,7 +49,7 @@ public class InputGrade {
             dy[i].addGrade(id, name, pr, mid, prf, fi);
             
         }
-      
+       System.out.printf("%-10s %-10s %-10s %-10s %-10s %-10s %-10s %-10s\n", "Student Id", "Name", "Prelim","Midterm","Prefinal","Final","Average","Remarks");
         
         for (int i=0; i < num; i++){
             
