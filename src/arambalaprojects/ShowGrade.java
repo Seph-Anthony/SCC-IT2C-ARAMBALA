@@ -9,7 +9,7 @@ package arambalaprojects;
  *
  * @author SCC-COLLEGE
  */
-public class gradedy {
+public class ShowGrade {
     String name;
     int id;
     double pr, mid, prf, fi;

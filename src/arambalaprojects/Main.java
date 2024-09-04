@@ -15,9 +15,12 @@ public class Main {
         
         Scanner in = new Scanner (System.in);
         
-        Salary sal = new Salary();
-        sal.inputsalary();
+        Account acc = new  Account();
+        acc.inputacc();
         
+//        Salary sal = new Salary();
+//        sal.inputsalary();
+//        
         
 //      
 //InputGrade grade = new InputGrade();

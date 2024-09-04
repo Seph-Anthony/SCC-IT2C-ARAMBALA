@@ -20,7 +20,7 @@ public class InputGrade {
            Scanner in = new Scanner (System.in);
       
         
-        gradedy[] dy = new gradedy[100];
+        ShowGrade[] dy = new ShowGrade[100];
 
         
         System.out.println("Enter number of Students: \n");
@@ -44,7 +44,7 @@ public class InputGrade {
             System.out.print("Final: ");
             double fi = in.nextDouble();
             
-            dy[i]=new gradedy();
+            dy[i]=new ShowGrade();
             
             dy[i].addGrade(id, name, pr, mid, prf, fi);
             
