@@ -25,7 +25,7 @@ public class InputProduct {
              System.out.print("Product ID: ");
              int id = in.nextInt();
              
-             System.out.print("Product Name:");
+             System.out.print("Product Name: ");
        String name = in.next();
              
                 System.out.print("Product Price: ");

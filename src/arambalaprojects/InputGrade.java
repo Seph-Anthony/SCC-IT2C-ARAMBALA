@@ -23,7 +23,7 @@ public class InputGrade {
         ShowGrade[] dy = new ShowGrade[100];
 
         
-        System.out.print("Enter number of Students: \n");
+        System.out.print("Enter number of Students: ");
         int num = in.nextInt();
         
         for (int i=0; i < num; i++){
