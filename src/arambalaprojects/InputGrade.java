@@ -13,6 +13,41 @@ import java.util.Scanner;
  */
 public class InputGrade {
     
+    
+    
+   
+
+    public  void editgrade(ShowGrade dy[], int current, int id){
+    Scanner in = new Scanner (System.in);
+        for(int i = 0; i<=current; i++){
+           if(dy[i] != null && dy[i].id == id){
+               System.out.println("Enter New Prelim Grade");
+               double pr1= in.nextDouble();
+               dy[i].pr = pr1;
+               
+                System.out.println("Enter New Midterm Grade");
+               double mid1= in.nextDouble();
+               dy[i].mid = mid1;
+               
+                System.out.println("Enter New PreFinal Grade");
+               double prf1= in.nextDouble();
+               dy[i].prf = prf1;
+               
+                System.out.println("Enter New Final Grade");
+               double fi1= in.nextDouble();
+               dy[i].fi = fi1;
+                              
+
+               
+           }
+            
+        
+         
+         
+     }   
+        
+        
+    }
     public void inputgrade(){
         
         
@@ -21,10 +56,34 @@ public class InputGrade {
       
         
         ShowGrade[] dy = new ShowGrade[100];
+int num =0;
+String op;
 
+
+
+do{
+        System.out.println("Welcome to Grading App");
+        System.out.println("1. Add");
+        System.out.println("2. View");
+        System.out.println("3. Update");
+        System.out.println("4. Delete");
+        System.out.println("5. Exit");
         
-        System.out.print("Enter number of Students: ");
-        int num = in.nextInt();
+            
+       
+        System.out.println("Enter Action: ");
+        int option =in.nextInt();
+        
+        while (option>5){
+            System.out.println("Invalid Action\n Try Again: ");
+            option = in.nextInt();
+        }
+        
+        switch(option){
+            
+            case 1:
+                System.out.print("Enter number of Students: ");
+        num = in.nextInt();
         
         for (int i=0; i < num; i++){
             System.out.println("Enter details for Student "+(i+1)+": ");
@@ -49,14 +108,34 @@ public class InputGrade {
             dy[i].addGrade(id, name, pr, mid, prf, fi);
             
         }
-       System.out.printf("%-10s %-10s %-10s %-10s %-10s %-10s %-10s %-10s\n", "Student Id", "Name", "Prelim","Midterm","Prefinal","Final","Average","Remarks");
-        
-        for (int i=0; i < num; i++){
+                break;
+                
+                
+            case 2:
+                
+                  for (int i=0; i < num; i++){
             
             dy[i].showGrade();
             
+                
+               
         }
+        break;
+   
+            case 3:
+                
+                System.out.println("Enter the ID to update: ");
+               int ids = in.nextInt();
+                System.out.println(""+ids);
+                editgrade(dy, num, ids);
+                
+                break;
+                
     }
+        
+            System.out.println("Do you want to continue (yes|Yes):" );
+            op = in.next();
+         }while(op.equals("Yes") ||op.equals("yes"));
     
-    
+    }
 }
