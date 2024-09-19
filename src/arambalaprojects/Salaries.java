@@ -5,6 +5,8 @@
  */
 package arambalaprojects;
 
+import java.util.Scanner;
+
 /**
  *
  * @author SCC-COLLEGE
@@ -38,6 +40,29 @@ public class Salaries {
         
 
     }
+    
+    public void editemployee(Salaries ha[], int ids, int current){
+        Scanner in = new Scanner (System.in);
+        for(int i = 0; i<current; i++){
+        if(ha[i] != null && ha[i].id == ids){
+            System.out.print("Enter new Rate(Hour): ");
+            double rate1 = in.nextDouble();
+            ha[i].rate = rate1;
+            
+            System.out.print("Enter new Hours Worked: ");
+            double hour1 = in.nextDouble();
+            ha[i].work = hour1;
+            
+            System.out.print("Enter new Total Deduction: ");
+            double deduction1 = in.nextDouble();
+            ha[i].deduc = deduction1;
+            
+        }
+        }
+        
+    }
+         
+    
     
     
 }

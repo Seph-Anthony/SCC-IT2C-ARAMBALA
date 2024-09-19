@@ -17,37 +17,6 @@ public class InputGrade {
     
    
 
-    public  void editgrade(ShowGrade dy[], int current, int id){
-    Scanner in = new Scanner (System.in);
-        for(int i = 0; i<=current; i++){
-           if(dy[i] != null && dy[i].id == id){
-               System.out.println("Enter New Prelim Grade");
-               double pr1= in.nextDouble();
-               dy[i].pr = pr1;
-               
-                System.out.println("Enter New Midterm Grade");
-               double mid1= in.nextDouble();
-               dy[i].mid = mid1;
-               
-                System.out.println("Enter New PreFinal Grade");
-               double prf1= in.nextDouble();
-               dy[i].prf = prf1;
-               
-                System.out.println("Enter New Final Grade");
-               double fi1= in.nextDouble();
-               dy[i].fi = fi1;
-                              
-
-               
-           }
-            
-        
-         
-         
-     }   
-        
-        
-    }
     public void inputgrade(){
         
         
@@ -66,8 +35,7 @@ do{
         System.out.println("1. Add");
         System.out.println("2. View");
         System.out.println("3. Update");
-        System.out.println("4. Delete");
-        System.out.println("5. Exit");
+        System.out.println("4. Exit");
         
             
        
@@ -89,9 +57,15 @@ do{
             System.out.println("Enter details for Student "+(i+1)+": ");
             
            
-            
+            int id;
+            while(true){
             System.out.print("ID: ");
-            int id = in.nextInt();
+             id = in.nextInt();
+             if(!dupid(dy, id, i))break;{
+                System.out.println("!ID ALREADY EXISTED!"); 
+                
+            }
+            }
             System.out.print("Name: ");
             String name =in.next();
             System.out.print("Prelim: ");
@@ -127,8 +101,14 @@ do{
                 System.out.println("Enter the ID to update: ");
                int ids = in.nextInt();
                 System.out.println(""+ids);
-                editgrade(dy, num, ids);
+                ShowGrade edit = new ShowGrade();
+                edit.editgrade(dy, num, ids);
                 
+                break;
+                
+            case 4:
+                System.out.println("Program Exiting. . .");
+                System.exit(0);
                 break;
                 
     }
@@ -137,5 +117,16 @@ do{
             op = in.next();
          }while(op.equals("Yes") ||op.equals("yes"));
     
+    }
+    public boolean dupid(ShowGrade dy[], int id, int current){
+        for (int i = 0; i <current; i++){
+            
+            if(dy[i]!= null && dy[i].id == id){
+                return true;
+            }
+            
+        }
+        
+        return false;
     }
 }

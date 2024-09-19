@@ -14,17 +14,45 @@ public class InputProduct {
         Scanner in = new Scanner (System.in);
         ShowProduct prod[ ] = new ShowProduct[100];
         
+       int num =0;
+        String another;
+        do{
+          System.out.println("Welcome to Grading App");
+        System.out.println("1. Add");
+        System.out.println("2. View");
+        System.out.println("3. Update");
+        System.out.println("4. Exit");
         
+        
+        System.out.print("Enter Action: ");
+       int action = in.nextInt();
+        
+        while(action>4){
+            System.out.print("Not Valid! \n Try Again:  ");
+            action = in.nextInt();
+        }
+        
+        switch(action){
+        case 1:
+            
          System.out.print("Enter the number of Products: ");
-         int num = in.nextInt();
+          num = in.nextInt();
          
          for(int i = 0; i<num; i++){
              
              System.out.printf("Details %d \n",i+1);
              
-             System.out.print("Product ID: ");
-             int id = in.nextInt();
              
+             int id;
+             while (true){
+             System.out.print("Product ID: ");
+             id = in.nextInt();
+             if(!dupid(prod, id, i))break;{
+                 System.out.println("ID ALREADY EXISTED! \n Try again");
+                 
+             }
+             
+             }
              System.out.print("Product Name: ");
        String name = in.next();
              
@@ -41,13 +69,47 @@ public class InputProduct {
              prod[i].addProduct(id, name, price, sold, stock);
          }
          
-         System.out.printf("%-10s %-10s %-10s %-10s %-10s %-10s %-10s %-10s\n", "Product ID", "Name", "Price","Sold","Stock","Profit","Status","TEP");
+         break;
+//       
         
-           
+        case 2:
          for(int i = 0; i<num; i++){
              prod[i].viewProduct();
+             
+            
          }
-         }
-    }
+          break;
+             case 3:
+                 System.out.print("Enter the ID you want to update: ");
+                 int ids = in.nextInt();
+                 ShowProduct pr = new ShowProduct();
+                 pr.editprod(prod, ids, num);
+             break;
+             
+             
+             case 4:
+                 System.out.println("Program Exiting. . .");
+                 System.exit(0);
+                 break;
+        }
+        
+            System.out.println("Do you want to make another transaction(yes|Yes):");
+            another = in.next();
+         }while (another.equals("yes") || another.equals("Yes")); 
+        
+        }
     
+    public boolean dupid(ShowProduct prod[], int id, int current){
+        for(int i = 0; i<current; i++){
+            if(prod[i] != null && prod[i].id == id){
+                return true;
+            }
+            
+        }
+        
+        
+        return false;
+    }
+    }
+
 
